@@ -1,0 +1,29 @@
+# Repository-wide allowlist: documentation and reusable source only.
+*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/AGENTS.md
+!/scripts/
+!/scripts/*.py
+!/ip-video-pipeline/
+!/ip-video-pipeline/SKILL.md
+!/ip-video-pipeline/agents/
+!/ip-video-pipeline/agents/openai.yaml
+!/ip-video-pipeline/references/
+!/ip-video-pipeline/references/*.md
+!/ip-video-pipeline/scripts/
+!/ip-video-pipeline/scripts/*.py
+!/ip-video-pipeline/scripts/requirements*.txt
+# Never allow credentials, private configuration, caches or generated media.
+.env*
+*.env
+*credentials*
+*secrets*
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+__pycache__/
+*.pyc
