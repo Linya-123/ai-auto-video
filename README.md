@@ -1,8 +1,6 @@
-# AI 自动化剪辑 Skill
+# AI 自动化剪辑｜从选题到成片的 Agent Skill
 
-### 给一个选题，让 AI 把它做成视频。
-
-**文案 → 配音 → 分镜 → 画面 → 动效 → 字幕 → 成片。**
+**给一个选题，AI 自动完成文案、配音、分镜、画面、动效、字幕与导出。**
 
 `ip-video-pipeline` 为个人 IP、知识科普与教程讲解提供完整的制作流程。把它交给能调用工具的 AI Agent，你负责选题和方向，Agent 负责组织素材、执行制作、检查并导出可继续修改的工程。
 
@@ -18,7 +16,7 @@ https://github.com/user-attachments/assets/9ad3dfe0-6ba6-4319-bb99-c3f11350b895
 
 从原创狐狸角色与三视图开始，完成口播、整段配音、语音对齐、6 个镜头、知识动效和 15 段字幕。案例使用插画人物镜头与纯旁白，在 Codex 环境完成。
 
-[下载 MP4](https://github.com/Linya-123/ip-video-pipeline/releases/download/demo-v1/demo.mp4) · [案例附件](https://github.com/Linya-123/ip-video-pipeline/releases/tag/demo-v1)
+[下载 MP4](https://github.com/Linya-123/ai-auto-video/releases/download/demo-v1/demo.mp4) · [案例附件](https://github.com/Linya-123/ai-auto-video/releases/tag/demo-v1)
 
 ## 能帮你做什么？
 
@@ -33,12 +31,12 @@ https://github.com/user-attachments/assets/9ad3dfe0-6ba6-4319-bb99-c3f11350b895
 
 ### 1. 下载并加载 Skill
 
-[下载仓库 ZIP](https://github.com/Linya-123/ip-video-pipeline/archive/refs/heads/main.zip)，解压后将里面的 **`ip-video-pipeline/` 文件夹**导入所用 Agent 的技能目录。这个文件夹包含 `SKILL.md`、`references/` 和 `scripts/`，需要一起保留。
+[下载仓库 ZIP](https://github.com/Linya-123/ai-auto-video/archive/refs/heads/main.zip)，解压后将里面的 **`ip-video-pipeline/` 文件夹**导入所用 Agent 的技能目录。这个文件夹包含 `SKILL.md`、`references/` 和 `scripts/`，需要一起保留。
 
 也可以把下面这段话交给 Agent：
 
 ```text
-请从 https://github.com/Linya-123/ip-video-pipeline 获取项目，
+请从 https://github.com/Linya-123/ai-auto-video 获取项目，
 将其中的 ip-video-pipeline 文件夹安装到你支持的技能目录。
 如果当前环境没有技能安装入口，就读取该文件夹中的 SKILL.md，
 并按需读取引用文档、调用随包脚本来执行后续任务。
