@@ -2,7 +2,7 @@
 
 **给一个选题，AI 自动完成文案、配音、分镜、画面、动效、字幕与导出。**
 
-`ip-video-pipeline` 为个人 IP、知识科普与教程讲解提供完整的制作流程。把它交给能调用工具的 AI Agent，你负责选题和方向，Agent 负责组织素材、执行制作、检查并导出可继续修改的工程。
+把 `ip-video-pipeline` 交给能调用工具的 AI Agent，你负责选题和方向，Agent 负责组织素材、执行制作、检查并导出可继续修改的工程。
 
 **面向 Codex、WorkBuddy 等 AI Agent · 支持本地模型与 API · Apache 2.0 开源**
 
@@ -17,6 +17,12 @@ https://github.com/user-attachments/assets/9ad3dfe0-6ba6-4319-bb99-c3f11350b895
 从原创狐狸角色与三视图开始，完成口播、整段配音、语音对齐、6 个镜头、知识动效和 15 段字幕。案例使用插画人物镜头与纯旁白，在 Codex 环境完成。
 
 [下载 MP4](https://github.com/Linya-123/ai-auto-video/releases/download/demo-v1/demo.mp4) · [案例附件](https://github.com/Linya-123/ai-auto-video/releases/tag/demo-v1)
+
+## 适用范围
+
+**主要面向带动画 IP 的知识科普、教程讲解类视频**，采用“动画角色 + 旁白 + 知识图解与动效”的形式，适合持续使用同一个角色制作系列内容。
+
+真人口播、实拍 Vlog、剧情短片等其他类型，需要先按内容形式调整 Skill 中对应的素材处理、镜头编排与合成流程。例如真人口播应以实拍视频及原声为基础，调整口误与停顿剪切、补充画面和字幕策略，不能直接照搬角色生图流程。
 
 ## 能帮你做什么？
 
