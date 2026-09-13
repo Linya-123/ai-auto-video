@@ -201,6 +201,14 @@ video-studio/
 | 具体命令与工具调用 | [工具接入](ai-auto-video/references/tools.md) |
 | 角色一致性与镜头设计 | [视觉编排](ai-auto-video/references/visual-prompts.md) |
 
+## 致敬与感谢
+
+站在前人的肩膀上，让创作走得更远。
+
+本项目受到 [xilo（@xilo2991）](https://x.com/xilo2991) 分享的 AI 视频制作流程与提示词启发。感谢他的实践与分享，让从个人动画 IP 到自动化剪辑的探索有了可以学习的起点。
+
+也感谢为这条创作流程提供支持的开源工具与社区。希望这份 Skill 能把分享继续传递下去，让更多人做出自己的作品。
+
 ## 许可证
 
 [Apache License 2.0](LICENSE)。第三方工具、模型与外部素材遵循各自许可。
