@@ -6,15 +6,15 @@
 !/AGENTS.md
 !/scripts/
 !/scripts/*.py
-!/ip-video-pipeline/
-!/ip-video-pipeline/SKILL.md
-!/ip-video-pipeline/agents/
-!/ip-video-pipeline/agents/openai.yaml
-!/ip-video-pipeline/references/
-!/ip-video-pipeline/references/*.md
-!/ip-video-pipeline/scripts/
-!/ip-video-pipeline/scripts/*.py
-!/ip-video-pipeline/scripts/requirements*.txt
+!/ai-auto-video/
+!/ai-auto-video/SKILL.md
+!/ai-auto-video/agents/
+!/ai-auto-video/agents/openai.yaml
+!/ai-auto-video/references/
+!/ai-auto-video/references/*.md
+!/ai-auto-video/scripts/
+!/ai-auto-video/scripts/*.py
+!/ai-auto-video/scripts/requirements*.txt
 # Never allow credentials, private configuration, caches or generated media.
 .env*
 *.env

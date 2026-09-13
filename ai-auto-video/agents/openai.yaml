@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 自动化剪辑"
+  short_description: "动画 IP 知识视频全流程制作，也可单独调用文案、配音、视觉编排、镜头与导出"
+  default_prompt: "使用 $ai-auto-video，按我指定的全流程或单步范围制作，复用已有素材，交付所需产物后停止。"

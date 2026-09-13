@@ -15,7 +15,7 @@ Agent 负责理解、写稿、导演编排和调用；Python 脚本负责可重�
 | BGM/SFX | media-use / 用户素材 | 按素材许可使用；未配置可先保留纯旁白 |
 | 录屏/网页 | 当前浏览器工具 | 需实际操作/素材，无法操作时标明缺口 |
 
-首次先读 [方案选择](providers.md)，盘点能力、说明优劣并确定路线，再读 [工作区初始化](workspace.md)，完成缺项安装、共享库和单片分区。下方说明各制作环节的工具接入方式。
+全流程首次先读 [方案选择](providers.md)，盘点能力、说明优劣并确定路线，再读 [工作区初始化](workspace.md)，完成缺项安装、共享库和单片分区。单步仅准备该环节实际所需工具：写稿或解释方法不安装媒体依赖，编排草案不要求配音，对齐已有音频不初始化TTS服务。下方说明各制作环节的工具接入方式。
 
 ## 运行环境
 
@@ -59,7 +59,7 @@ python3 "$MEDIA_GEN_ROOT/scripts/media_gen.py" image \
 
 ### 渲染接入
 
-创建/恢复 `composition/`，通过 HyperFrames 工作流写真实工程，不通过本脚本冒充渲染。以下命令在工程目录执行：
+创建/恢复 `composition/`，读取当前已安装的 HyperFrames 入口；写HTML前读其core，按需读animation、keyframes和media-use。通过 HyperFrames 工作流写真实工程，不通过本脚本冒充渲染。单独导出时先检查已有工程及引用资源，不重写已完成文案、配音和镜头；缺资源时指出具体缺项。新建或重编画面时先预览覆盖关键变化的样片（短片可直接全片），检查后再正式导出。以下命令在工程目录执行：
 
 ```bash
 npx hyperframes check
@@ -71,7 +71,7 @@ python3 "$SKILL_ROOT/scripts/pipeline.py" verify-video /absolute/project /absolu
 
 ## 分享安装
 
-把 `ip-video-pipeline/` 整个目录复制到目标 Agent 的 skills 目录（Codex 通常为 `~/.codex/skills/`），刷新技能列表或开启新会话后使用 `$ip-video-pipeline`。这是标准 Skill 文件夹，`agents/openai.yaml` 是可选UI信息。接收者还需要上表中的实际能力；ZIP 本身不捆绑大模型、HyperFrames安装包或收费账户。
+把 `ai-auto-video/` 整个目录复制到目标 Agent 的 skills 目录（Codex 通常为 `~/.codex/skills/`），刷新技能列表或开启新会话后使用 `$ai-auto-video`。这是标准 Skill 文件夹，`agents/openai.yaml` 是可选UI信息。接收者还需要上表中的实际能力；ZIP 本身不捆绑大模型、HyperFrames安装包或收费账户。
 
 ## 动效资料
 

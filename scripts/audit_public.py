@@ -8,9 +8,9 @@ import subprocess
 from pathlib import Path
 
 ALLOW = ['.gitignore', 'README.md', 'LICENSE', 'AGENTS.md', 'scripts/*.py',
-         'ip-video-pipeline/SKILL.md', 'ip-video-pipeline/agents/openai.yaml',
-         'ip-video-pipeline/references/*.md', 'ip-video-pipeline/scripts/*.py',
-         'ip-video-pipeline/scripts/requirements*.txt']
+         'ai-auto-video/SKILL.md', 'ai-auto-video/agents/openai.yaml',
+         'ai-auto-video/references/*.md', 'ai-auto-video/scripts/*.py',
+         'ai-auto-video/scripts/requirements*.txt']
 RULES = {
     'private-key': r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
     'credential-token': r'\b(?:sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+)',
@@ -59,7 +59,9 @@ def main():
                 if not row:continue
                 metadata,name=row.split(b'\t',1);name=name.decode();mode,kind,oid=metadata.split()
                 if kind!=b'blob':continue
-                if not allowed(name):findings.append({'file':name,'rule':'history-forbidden-file','commit':rev[:12]})
+                # Historical releases used the former Skill directory; apply the same source-only rules.
+                audit_name = 'ai-auto-video/' + name[len('ip-video-pipeline/'):] if name.startswith('ip-video-pipeline/') else name
+                if not allowed(audit_name):findings.append({'file':name,'rule':'history-forbidden-file','commit':rev[:12]})
                 else:findings.extend(scan(name,git('cat-file','blob',oid.decode())))
         history=f'checked {len(revisions)} commits'
     print(json.dumps({'ok':not findings,'public_files_checked':count,'excluded_local_files':excluded,

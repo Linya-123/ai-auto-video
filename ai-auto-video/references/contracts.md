@@ -31,7 +31,7 @@
 
 局部修改先明确反馈、受影响镜头/时间段和必须保留的参数，完成后检查目标项与无关项。仅改画面保持原旁白和时间轴，不因修一个字体或场景重做全片。
 
-`project.json` 中 `stages` 记录每阶段 `status`（pending/running/verified/failed）、`inputs`哈希、`outputs`路径、`validation`报告路径；Agent在实际检查后更新。`decisions` 记录选择、原因及 `agent-selected/user-approved`。
+`project.json` 中 `stages` 记录每阶段 `status`（pending/running/verified/failed）、`inputs`哈希、`outputs`路径、`validation`报告路径；Agent在实际检查后更新。单步只更新实际执行项；其余保持原状态。上游修改仍须标记受影响下游待重做，但不自动执行超出本次范围的阶段。视觉草案不满足正式分镜验证条件；只记录草案产出，不将正式分镜阶段标为verified。`decisions` 记录选择、原因及 `agent-selected/user-approved`。
 
 依赖顺序：
 - 文案/声音变更 → 配音、对齐、分镜、合成、导出失效。

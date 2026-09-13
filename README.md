@@ -2,11 +2,11 @@
 
 **给一个选题，AI 自动完成文案、配音、分镜、画面、动效、字幕与导出。**
 
-把 `ip-video-pipeline` 交给能调用工具的 AI Agent，你负责选题和方向，Agent 负责组织素材、执行制作、检查并导出可继续修改的工程。
+把 `ai-auto-video` 交给能调用工具的 AI Agent，你负责选题和方向，Agent 负责组织素材、执行制作、检查并导出可继续修改的工程。
 
 **面向 Codex、WorkBuddy 等 AI Agent · 支持本地模型与 API · Apache 2.0 开源**
 
-[效果展示](#效果展示) · [快速开始](#快速开始) · [工作原理](#工作原理) · [工具选择](#工具选择) · [详细文档](#详细文档)
+[效果展示](#效果展示) · [快速开始](#快速开始) · [单独调用](#单独调用某个功能) · [工作原理](#工作原理) · [工具选择](#工具选择) · [详细文档](#详细文档)
 
 ## 效果展示
 
@@ -37,18 +37,18 @@ https://github.com/user-attachments/assets/9ad3dfe0-6ba6-4319-bb99-c3f11350b895
 
 ### 1. 下载并加载 Skill
 
-[下载仓库 ZIP](https://github.com/Linya-123/ai-auto-video/archive/refs/heads/main.zip)，解压后将里面的 **`ip-video-pipeline/` 文件夹**导入所用 Agent 的技能目录。这个文件夹包含 `SKILL.md`、`references/` 和 `scripts/`，需要一起保留。
+[下载仓库 ZIP](https://github.com/Linya-123/ai-auto-video/archive/refs/heads/main.zip)，解压后将里面的 **`ai-auto-video/` 文件夹**导入所用 Agent 的技能目录。这个文件夹包含 `SKILL.md`、`references/` 和 `scripts/`，需要一起保留。
 
 也可以把下面这段话交给 Agent：
 
 ```text
 请从 https://github.com/Linya-123/ai-auto-video 获取项目，
-将其中的 ip-video-pipeline 文件夹安装到你支持的技能目录。
+将其中的 ai-auto-video 文件夹安装到你支持的技能目录。
 如果当前环境没有技能安装入口，就读取该文件夹中的 SKILL.md，
 并按需读取引用文档、调用随包脚本来执行后续任务。
 ```
 
-安装完成后，刷新技能列表或开启新会话。Codex 中可用 `$ip-video-pipeline` 调用；WorkBuddy 等环境使用各自的技能入口，或明确要求 Agent 读取该 Skill。
+安装完成后，刷新技能列表或开启新会话。Codex 中可用 `$ai-auto-video` 调用；WorkBuddy 等环境使用各自的技能入口，或明确要求 Agent 读取该 Skill。
 
 > Agent 需要能读写文件、执行命令，并访问所选生成工具。现有案例在 Codex 验证，其他 Agent 按其工具能力接入。
 
@@ -57,7 +57,7 @@ https://github.com/user-attachments/assets/9ad3dfe0-6ba6-4319-bb99-c3f11350b895
 复制下面的需求，替换方括号即可：
 
 ```text
-使用 ip-video-pipeline，帮我制作一条约 60 秒的知识视频。
+使用 ai-auto-video，帮我制作一条约 60 秒的知识视频。
 
 主题：[为什么文件越存越难找]
 受众：[经常找不到文件的上班族]
@@ -94,6 +94,44 @@ Agent 会按你的效果要求、机器条件和预算给出可行方案。选�
 ```
 
 满意后确认最终采用版本。Agent 会列出保留文件、待删旧产物及清理方式，经你确认再清理。
+
+## 单独调用某个功能
+
+**可以整条流程执行，也可以只用其中一步或连续几步。** 使用同一个 Skill，告诉 Agent“只做什么”和已有文件位置；完成指定产物后即停止。只想学习某一步的方法，也可以要求只解释、不实际生成。
+
+| 想单独做什么 | 提供什么 |
+|---|---|
+| 选择工具方案、初始化环境 | 效果要求、现有工具、预算或工作区位置 |
+| 整理素材库 | 素材目录及整理目标 |
+| 设计角色、生成三视图 | 角色需求；已有身份图则提供原图 |
+| 写口播文案 | 选题、受众、目标时长 |
+| 生成配音 | 定稿、声线要求或自己的参考音频 |
+| 对齐并生成字幕 | 定稿与对应音频 |
+| 拆分音频 | 已有音频和真实对齐时间轴 |
+| 生成视觉编排图 | 文案、画幅、已有角色/画风参考；配音可暂缺 |
+| 制作人物镜头或知识动效 | 指定镜头的设计、参考素材与时长 |
+| 混音 | 现有视频或音轨、音乐/音效要求 |
+| 合成、渲染导出 | 已有工程或齐备的镜头、音频与时间轴 |
+| 检查产物、选择版本与清理 | 待检查文件或项目位置 |
+
+例如，只生成视觉编排图：
+
+```text
+使用 ai-auto-video，只生成视觉编排图。
+文案：[文案文件]；角色参考：[图片目录]；画幅：16:9。
+目前没有配音，先按内容段落编排，不生成音频、不编造精确时间。
+交付带镜号、构图、口播摘要和动作说明的编排图，以及分镜草案。
+完成后停止，不继续生成最终镜头或渲染成片。
+```
+
+只了解方法：
+
+```text
+使用 ai-auto-video，讲解视觉编排图是怎么生成的，
+给我输入材料清单、操作步骤和一份提示词示例，不实际生成。
+```
+
+也可以说“只给这份文案和对应音频生成字幕”或“只渲染这个已有工程”。缺少输入时，Agent 会指出当前步骤需要补什么；单步可用输入、产出及详细要求见 [阶段路由](ai-auto-video/SKILL.md#阶段路由输入产出与停止位置)。
 
 ## 工作原理
 
@@ -157,11 +195,11 @@ video-studio/
 
 | 想了解什么 | 去哪里看 |
 |---|---|
-| 完整执行流程 | [Skill 入口](ip-video-pipeline/SKILL.md) |
-| 方案优劣与配音接入 | [工具方案](ip-video-pipeline/references/providers.md) |
-| 环境安装与素材库 | [工作区初始化](ip-video-pipeline/references/workspace.md) |
-| 具体命令与工具调用 | [工具接入](ip-video-pipeline/references/tools.md) |
-| 角色一致性与镜头设计 | [视觉编排](ip-video-pipeline/references/visual-prompts.md) |
+| 完整执行流程 | [Skill 入口](ai-auto-video/SKILL.md) |
+| 方案优劣与配音接入 | [工具方案](ai-auto-video/references/providers.md) |
+| 环境安装与素材库 | [工作区初始化](ai-auto-video/references/workspace.md) |
+| 具体命令与工具调用 | [工具接入](ai-auto-video/references/tools.md) |
+| 角色一致性与镜头设计 | [视觉编排](ai-auto-video/references/visual-prompts.md) |
 
 ## 许可证
 

@@ -2,7 +2,7 @@
 
 本文件供维护者和修改仓库的 Agent 使用。README 面向使用者，介绍功能、案例、工作原理和上手步骤，不放提交审查流程。
 
-Skill 修改规则统一见 [SKILL.md](ip-video-pipeline/SKILL.md#修改本-skill-的规则)，在各职责文档原位更新，避免重复。
+Skill 修改规则统一见 [SKILL.md](ai-auto-video/SKILL.md#修改本-skill-的规则)，在各职责文档原位更新，避免重复。
 
 ## 隐私与提交边界
 

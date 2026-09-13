@@ -1,4 +1,0 @@
-interface:
-  display_name: "个人 IP 视频全流程"
-  short_description: "从角色三视图、口播文案到配音对齐、人物镜头、知识动效与成片导出"
-  default_prompt: "使用 $ip-video-pipeline，按我的选题自动完成个人 IP 知识视频，从已有资产接着做并导出成片。"
