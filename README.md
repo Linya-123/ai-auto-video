@@ -12,7 +12,7 @@
 
 ## 效果展示
 
-[![AI 自动化剪辑案例：为什么文件越存越难找](https://github.com/Linya-123/ip-video-pipeline/releases/download/demo-v1/poster.png)](https://github.com/Linya-123/ip-video-pipeline/releases/tag/demo-v1)
+https://github.com/user-attachments/assets/9ad3dfe0-6ba6-4319-bb99-c3f11350b895
 
 **《为什么文件越存越难找？》** — 约 36 秒 / 1080p / 中文配音
 
